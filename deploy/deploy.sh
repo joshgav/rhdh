@@ -65,14 +65,14 @@ if [[ -n "${GITHUB_APP_ID}" ]]; then
     kubectl create secret generic github-app-credentials --from-file=${github_app_creds_path}
 fi
 
-# oc get clusterrolebinding backstage-backend-k8s &> /dev/null
-# if [[ $? != 0 ]]; then
-#     oc create clusterrolebinding backstage-backend-k8s --clusterrole=backstage-k8s-plugin --serviceaccount=${bs_app_name}:default
-# fi
-# oc get clusterrolebinding backstage-backend-tekton &> /dev/null
-# if [[ $? != 0 ]]; then
-#     oc create clusterrolebinding backstage-backend-tekton --clusterrole=backstage-tekton-plugin --serviceaccount=${bs_app_name}:default
-# fi
+oc get clusterrolebinding ${bs_app_name}-backend-k8s &> /dev/null
+if [[ $? != 0 ]]; then
+    oc create clusterrolebinding ${bs_app_name}-backend-k8s --clusterrole=backstage-k8s-plugin --serviceaccount=${bs_app_name}:default
+fi
+oc get clusterrolebinding ${bs_app_name}-backend-tekton &> /dev/null
+if [[ $? != 0 ]]; then
+    oc create clusterrolebinding ${bs_app_name}-backend-tekton --clusterrole=backstage-tekton-plugin --serviceaccount=${bs_app_name}:default
+fi
 
 echo "INFO: helm upgrade --install"
 ensure_helm_repo bitnami https://charts.bitnami.com/bitnami 1> /dev/null
