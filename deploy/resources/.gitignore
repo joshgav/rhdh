@@ -1,0 +1,7 @@
+argocd-token-secret.yaml
+custom-rhdh-config-cm.yaml
+github-secrets-secret.yaml
+kustomization.yaml
+namespace.yaml
+quay-token-secret.yaml
+rhdh-secrets-secret.yaml
