@@ -10,5 +10,6 @@ resources:
 - github-secrets-secret.yaml
 - argocd-token-secret.yaml
 - quay-token-secret.yaml
+- microsoft-entra-secrets.yaml
 - role-k8s.yaml
 - role-tekton.yaml

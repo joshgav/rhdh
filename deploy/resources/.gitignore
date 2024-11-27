@@ -5,3 +5,4 @@ kustomization.yaml
 namespace.yaml
 quay-token-secret.yaml
 rhdh-secrets-secret.yaml
+microsoft-entra-secrets.yaml

@@ -16,6 +16,7 @@ spec:
         - name: github-secrets
         - name: quay-token
         - name: argocd-token
+        - name: microsoft-entra-secrets
       configMaps:
         - name: custom-rhdh-config
     extraFiles:

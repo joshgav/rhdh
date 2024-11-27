@@ -29,6 +29,12 @@ data:
           production:
             clientId: ${GITHUB_APP_CLIENT_ID}
             clientSecret: ${GITHUB_APP_CLIENT_SECRET}
+        microsoft:
+          production:
+            clientId: ${AZURE_CLIENT_ID}
+            clientSecret: ${AZURE_CLIENT_SECRET}
+            tenantId: ${AZURE_TENANT_ID}
+    signInPage: github
 
     integrations:
       github:
@@ -41,8 +47,6 @@ data:
               webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
               privateKey: |
                 ${GITHUB_APP_PRIVATE_KEY}
-
-    signInPage: github
 
     catalog:
       import:
@@ -82,7 +86,20 @@ data:
             initialDelay:
               seconds: 15
             timeout:
-              minutes: 1
+              minutes: 60
+        microsoftGraphOrg:
+          providerId:
+            target: https://graph.microsoft.com/v1.0
+            tenantId: ${AZURE_TENANT_ID}
+            clientId: ${AZURE_CLIENT_ID}
+            clientSecret: ${AZURE_CLIENT_SECRET}
+            schedule:
+              frequency:
+                minutes: 30
+              initialDelay:
+                seconds: 15
+              timeout:
+                minutes: 60
 
     argocd:
       appLocatorMethods:
@@ -120,13 +137,13 @@ data:
           clusters:
             - url: https://kubernetes.default.svc/
               name: local-cluster
-              caFile: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+              # caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
               authProvider: serviceAccount
               # don't specify this attribute to force lookup in pod in cluster
               # serviceAccountToken: ${K8S_SERVICEACCOUNT_TOKEN}
               dashboardUrl: https://console-openshift-console.${openshift_ingress_domain}/
               dashboardApp: openshift
-              skipTLSVerify: false
+              skipTLSVerify: true
               skipMetricsLookup: false
       customResources:
         - group: tekton.dev

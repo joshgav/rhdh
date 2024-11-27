@@ -29,3 +29,5 @@ data:
       disabled: false
     - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd
       disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-msgraph-dynamic
+      disabled: false
