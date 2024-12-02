@@ -2,6 +2,9 @@ global:
   host: rhdh.azure.joshgav.com
   imagePullSecrets:
     - rhdh-pull-secret
+  auth:
+    backend:
+      enabled: true
 route:
   enabled: false
 upstream:
@@ -14,6 +17,10 @@ upstream:
         - rhdh-pull-secret
     podSecurityContext:
       fsGroup: 3000
+    extraEnvVarsSecrets:
+      - rhdh-auth
+      - github-secrets
+      - microsoft-entra-secrets
   postgresql:
     enabled: true
     image:

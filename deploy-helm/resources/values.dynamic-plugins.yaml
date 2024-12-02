@@ -1,0 +1,30 @@
+global:
+  dynamic:
+    includes:
+      - "dynamic-plugins.default.yaml"
+    plugins:
+    - package: ./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-github-dynamic
+      disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-github-org-dynamic
+      disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-github-issues
+      disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-kubernetes-backend-dynamic
+      disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-kubernetes
+      disabled: false
+    # - package: ./dynamic-plugins/dist/janus-idp-backstage-plugin-quay
+    #   disabled: false
+    # - package: ./dynamic-plugins/dist/janus-idp-backstage-plugin-tekton
+    #   disabled: false
+    - package: ./dynamic-plugins/dist/janus-idp-backstage-plugin-topology
+      disabled: false
+    # - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd-backend-dynamic
+    #   disabled: false
+    # - package: ./dynamic-plugins/dist/roadiehq-scaffolder-backend-argocd-dynamic
+    #   disabled: false
+    # - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd
+    #   disabled: false
+    - package: ./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-msgraph-dynamic
+      disabled: false
+ 

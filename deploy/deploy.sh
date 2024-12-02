@@ -5,7 +5,7 @@ root_dir=$(cd ${this_dir}/.. && pwd)
 workspace_dir=$(cd ${root_dir}/.. && pwd)
 if [[ -e "${root_dir}/.env" ]]; then source ${root_dir}/.env; fi
 if [[ -e "${this_dir}/.env" ]]; then source ${this_dir}/.env; fi
-source ${this_dir}/lib/kubernetes.sh
+source ${root_dir}/lib/kubernetes.sh
 
 export bs_app_name=${1:-${BS_APP_NAME:-rhdh3}}
 export quay_user_name=${2:-${QUAY_USER_NAME:-joshgav}}
