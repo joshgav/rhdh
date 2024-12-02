@@ -92,3 +92,11 @@ upstream:
                 # serviceAccountToken: ${K8S_SERVICEACCOUNT_TOKEN}
                 skipTLSVerify: true
                 skipMetricsLookup: false
+      permission:
+        enabled: true
+        rbac:
+          admin:
+            users:
+              - name: user:default/joshgavant_gmail.com
+              - name: user:default/phillip.knezevich_gmail.com
+              - name: user:default/inyoungcho0_gmail.com
