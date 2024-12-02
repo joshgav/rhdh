@@ -1,0 +1,27 @@
+global:
+  host: rhdh.azure.joshgav.com
+  imagePullSecrets:
+    - rhdh-pull-secret
+route:
+  enabled: false
+upstream:
+  ingress:
+    enabled: true
+    className: webapprouting.kubernetes.azure.com
+  backstage:
+    image:
+      pullSecrets:
+        - rhdh-pull-secret
+    podSecurityContext:
+      fsGroup: 3000
+  postgresql:
+    enabled: true
+    image:
+      pullSecrets:
+        - rhdh-pull-secret
+    primary:
+      podSecurityContext:
+        enabled: true
+        fsGroup: 3000
+  volumePermissions:
+    enabled: true
