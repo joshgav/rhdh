@@ -96,7 +96,7 @@ upstream:
         enabled: true
         rbac:
           admin:
-            users:
+            superUsers:
               - name: user:default/joshgavant_gmail.com
               - name: user:default/phillip.knezevich_gmail.com
               - name: user:default/inyoungcho0_gmail.com

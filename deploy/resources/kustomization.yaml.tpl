@@ -11,5 +11,7 @@ resources:
 - argocd-token-secret.yaml
 - quay-token-secret.yaml
 - microsoft-entra-secrets.yaml
+- aws-secrets.yaml
+- k8s-secret.yaml
 - role-k8s.yaml
 - role-tekton.yaml

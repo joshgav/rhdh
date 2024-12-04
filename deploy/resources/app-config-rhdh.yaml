@@ -34,7 +34,7 @@ data:
             clientId: ${AZURE_CLIENT_ID}
             clientSecret: ${AZURE_CLIENT_SECRET}
             tenantId: ${AZURE_TENANT_ID}
-    signInPage: github
+    signInPage: microsoft
 
     integrations:
       github:
@@ -47,6 +47,12 @@ data:
               webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
               privateKey: |
                 ${GITHUB_APP_PRIVATE_KEY}
+      aws:
+        accounts:
+          - accountId: ${AWS_ACCOUNT_ID}
+            accessKeyId: ${AWS_ACCESS_KEY_ID}
+            secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+            region: us-east-1
 
     catalog:
       import:
