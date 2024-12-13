@@ -13,6 +13,10 @@ data:
       disabled: false
     - package: ./dynamic-plugins/dist/backstage-plugin-github-issues
       disabled: false
+    # - package: ./dynamic-plugins/dist/backstage-community-plugin-github-actions
+    #   disabled: false
+    - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-github-pull-requests
+      disabled: false
     - package: ./dynamic-plugins/dist/backstage-plugin-kubernetes-backend-dynamic
       disabled: false
     - package: ./dynamic-plugins/dist/backstage-plugin-kubernetes

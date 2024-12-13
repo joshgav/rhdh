@@ -7,4 +7,5 @@ quay-token-secret.yaml
 rhdh-secrets-secret.yaml
 microsoft-entra-secrets.yaml
 aws-secrets.yaml
-k8s-secret.yaml
+k8s-token-secret.yaml
+default-clusterrolebinding.yaml

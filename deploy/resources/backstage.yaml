@@ -18,13 +18,9 @@ spec:
         - name: argocd-token
         - name: microsoft-entra-secrets
         - name: aws-secrets
+        - name: k8s-token
       configMaps:
         - name: custom-rhdh-config
-    extraFiles:
-      configMaps:
-        - name: kube-root-ca.crt
-          key: ca.crt
-      mountPath: /opt/app-root/src
     replicas: 1
     route:
       enabled: true

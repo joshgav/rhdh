@@ -1,0 +1,23 @@
+# see https://backstage.io/docs/features/software-catalog/descriptor-format/
+# and https://backstage.io/docs/features/software-catalog/well-known-annotations/
+# and https://backstage.io/docs/features/software-catalog/well-known-relations/
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redhat-developer-hub
+  description: Red Hat Developer Hub deployment
+  annotations:
+    backstage.io/kubernetes-namespace: rhdh
+    # this label also determines which Tekton pipeline runs are discovered 
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/name=backstage
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: rhdh
+    github.com/project-slug: joshgav/rhdh
+  links:
+    - url: https://blog.joshgav.com/
+      title: Josh's blog
+      icon: docs
+spec:
+  type: service
+  owner: josh@joshgav.com
+  lifecycle: experimental

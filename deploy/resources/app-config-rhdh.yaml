@@ -141,12 +141,12 @@ data:
       clusterLocatorMethods:
         - type: config
           clusters:
-            - url: https://kubernetes.default.svc/
+            - url: https://api.ipi.aws.joshgav.com:6443/
+              # url: https://kubernetes.default.svc/
               name: local-cluster
-              # caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
               authProvider: serviceAccount
-              # don't specify this attribute to force lookup in pod in cluster
-              # serviceAccountToken: ${K8S_SERVICEACCOUNT_TOKEN}
+              # don't specify this attribute to force lookup of automounted serviceaccount token in pod
+              serviceAccountToken: ${K8S_SERVICEACCOUNT_TOKEN}
               dashboardUrl: https://console-openshift-console.${openshift_ingress_domain}/
               dashboardApp: openshift
               skipTLSVerify: true
