@@ -2,10 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: ${bs_app_name}
 resources:
-- backstage.yaml
+## configuration
 - app-config-rhdh.yaml
 - custom-rhdh-dynamic-plugins.yaml
 - custom-rhdh-config-cm.yaml
+- dynamic-plugins-root-pvc.yaml
+## secrets
 - rhdh-secrets-secret.yaml
 - github-secrets-secret.yaml
 - argocd-token-secret.yaml
@@ -14,3 +16,5 @@ resources:
 - aws-secrets.yaml
 - k8s-token-secret.yaml
 - default-clusterrolebinding.yaml
+## instance
+- backstage.yaml

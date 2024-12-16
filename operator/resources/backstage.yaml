@@ -32,3 +32,10 @@ spec:
         template:
           spec:
             automountServiceAccountToken: true
+            volumes:
+              ## enables cache of compiled dynamic plugins
+              ## https://docs.redhat.com/en/documentation/red_hat_developer_hub/1.3/html/configuring_dynamic_plugins/con-dynamic-plugin-cache_title-plugins-rhdh-configure
+              - $patch: replace
+                name: dynamic-plugins-root
+                persistentVolumeClaim:
+                  claimName: dynamic-plugins-root
